@@ -1,0 +1,8 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+importances = pd.Series(model.feature_importances_, index=X.columns)
+importances.nlargest(10).plot(kind='barh')
+plt.title('Top 10 Features Influencing Performance')
+plt.xlabel('Importance')
+plt.show()
